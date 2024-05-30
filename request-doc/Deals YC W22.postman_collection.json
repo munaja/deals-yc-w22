@@ -1,0 +1,770 @@
+{
+	"info": {
+		"_postman_id": "f18cde50-ff4c-48e0-a33d-353999de7200",
+		"name": "Deals YC W22",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23150587"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"santoso_03@gmail.com\",\r\n    \"name\" : \"santoso03\",\r\n    \"password\": \"12341234\",\r\n    \"repassword\": \"12341234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{customer-host}}/account/register",
+							"host": [
+								"{{customer-host}}"
+							],
+							"path": [
+								"account",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"santoso_03@gmail.com\",\r\n    \"name\" : \"santoso03\",\r\n    \"password\": \"12341234\",\r\n    \"repassword\": \"12341234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{customer-host}}/account/register",
+									"host": [
+										"{{customer-host}}"
+									],
+									"path": [
+										"account",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 May 2024 02:48:12 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "403"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"source\": \"user\",\n        \"status\": \"created\",\n        \"structure\": \"single-data\"\n    },\n    \"data\": {\n        \"id\": 4,\n        \"createdAt\": \"2024-05-29T09:48:12.121+07:00\",\n        \"updatedAt\": \"2024-05-29T09:48:12.121+07:00\",\n        \"deletedAt\": null,\n        \"name\": \"santoso03\",\n        \"email\": \"santoso_03@gmail.com\",\n        \"note\": \"For Dev Only: use this path '/account/confirm-by-email?email=santoso_03@gmail.com&token=fb8bbf42-c36d-4be2-a36a-3af4a471bf56' to activate account\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Confirm By Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{customer-host}}/account/confirm-by-email?email=santoso_01@gmail.com&token=b66dc1b7-3ec6-48cd-9879-1228b71f0887",
+							"host": [
+								"{{customer-host}}"
+							],
+							"path": [
+								"account",
+								"confirm-by-email"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "santoso_01@gmail.com"
+								},
+								{
+									"key": "token",
+									"value": "b66dc1b7-3ec6-48cd-9879-1228b71f0887"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Confirm By Email",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{customer-host}}/account/confirm-by-email?email=santoso_03@gmail.com&token=fb8bbf42-c36d-4be2-a36a-3af4a471bf56",
+									"host": [
+										"{{customer-host}}"
+									],
+									"path": [
+										"account",
+										"confirm-by-email"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "santoso_03@gmail.com"
+										},
+										{
+											"key": "token",
+											"value": "fb8bbf42-c36d-4be2-a36a-3af4a471bf56"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 May 2024 02:48:40 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "245"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"source\": \"user\",\n        \"status\": \"confirmed\",\n        \"structure\": \"single-data\"\n    },\n    \"data\": {\n        \"id\": 4,\n        \"createdAt\": \"2024-05-29T09:48:12.121+07:00\",\n        \"updatedAt\": \"2024-05-29T09:48:40.963+07:00\",\n        \"deletedAt\": null,\n        \"name\": \"santoso03\",\n        \"email\": \"santoso_03@gmail.com\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Request Confirmation Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"santoso_01@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{customer-host}}/account/request-confirm-by-email",
+							"host": [
+								"{{customer-host}}"
+							],
+							"path": [
+								"account",
+								"request-confirm-by-email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Request Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"santoso_03@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{customer-host}}/account/request-reset-password",
+							"host": [
+								"{{customer-host}}"
+							],
+							"path": [
+								"account",
+								"request-reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Reset Password",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{customer-host}}/account/check-reset-password?email=santoso24@gmail.com&token=0c8bab31-47e9-41d0-b9f3-c74e6d29e5a2",
+							"host": [
+								"{{customer-host}}"
+							],
+							"path": [
+								"account",
+								"check-reset-password"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "santoso24@gmail.com"
+								},
+								{
+									"key": "token",
+									"value": "0c8bab31-47e9-41d0-b9f3-c74e6d29e5a2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newPassword\": \"12341234\",\r\n    \"rePassword\": \"12341234\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{customer-host}}/account/reset-password?email=santoso24@gmail.com&token=ac08c037-ed12-4104-a151-ead9c37e5a10",
+							"host": [
+								"{{customer-host}}"
+							],
+							"path": [
+								"account",
+								"reset-password"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "santoso24@gmail.com"
+								},
+								{
+									"key": "token",
+									"value": "ac08c037-ed12-4104-a151-ead9c37e5a10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"12341234\",\r\n    \"newPassword\": \"12341234\",\r\n    \"rePassword\": \"12341234\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{customer-host}}/account-om/change-password",
+							"host": [
+								"{{customer-host}}"
+							],
+							"path": [
+								"account-om",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"santoso02\",\r\n    \"password\": \"12341234\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{customer-host}}/authentication/login",
+							"host": [
+								"{{customer-host}}"
+							],
+							"path": [
+								"authentication",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"santoso10\",\r\n    \"password\": \"12341234\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{customer-host}}/authentication/logout",
+							"host": [
+								"{{customer-host}}"
+							],
+							"path": [
+								"authentication",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile - OM",
+			"item": [
+				{
+					"name": "Get Detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJxYjU2M21tTmdBWjcxTWZBekp5QyJ9.021osI2cnlqVFhoQCmOTR9zMAt-oWCpL8rv7xDqKwTs",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{customer-host}}/profile-om",
+							"host": [
+								"{{customer-host}}"
+							],
+							"path": [
+								"profile-om"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJxYjU2M21tTmdBWjcxTWZBekp5QyJ9.021osI2cnlqVFhoQCmOTR9zMAt-oWCpL8rv7xDqKwTs",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{customer-host}}/profile-om",
+									"host": [
+										"{{customer-host}}"
+									],
+									"path": [
+										"profile-om"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 May 2024 04:05:27 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "317"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"source\": \"profile\",\n        \"status\": \"fetched\",\n        \"structure\": \"single\"\n    },\n    \"data\": {\n        \"user_id\": 3,\n        \"user_name\": \"santoso02\",\n        \"user_createdAt\": \"2024-05-29T09:47:12.21+07:00\",\n        \"name\": \"Sintaso\",\n        \"birthDate\": \"0001-01-01T00:00:00Z\",\n        \"gender\": 0,\n        \"address\": \"\",\n        \"buildingNumber\": null,\n        \"regency_id\": 0,\n        \"phoneNumber\": null,\n        \"whatsappNumber\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\":\"Localhost 2023\",\r\n    \"gender\":1,\r\n    \"japanName\":\"Makoto Shia\",\r\n    \"name\":\"Santoso\",\r\n    \"birthDate\": \"2004-01-02T01:01:01+00:00\",\r\n    \"phoneNumber\":\"08312312312\",\r\n    \"regency_id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{customer-host}}/profile-om",
+							"host": [
+								"{{customer-host}}"
+							],
+							"path": [
+								"profile-om"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscription",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"premium\",\r\n    \"months\": 1,\r\n    \"paymentMethod_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{customer-host}}/subscription",
+							"host": [
+								"{{customer-host}}"
+							],
+							"path": [
+								"subscription"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"type\": \"premium\",\r\n    \"months\": 1,\r\n    \"paymentMethod_id\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{customer-host}}/subscription",
+									"host": [
+										"{{customer-host}}"
+									],
+									"path": [
+										"subscription"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 May 2024 04:02:44 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "301"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"source\": \"subscription\",\n        \"status\": \"created\",\n        \"structure\": \"single-data\"\n    },\n    \"data\": {\n        \"id\": 3,\n        \"createdAt\": \"2024-05-30T11:02:44.677+07:00\",\n        \"updatedAt\": \"2024-05-30T11:02:44.677+07:00\",\n        \"deletedAt\": null,\n        \"user_id\": 3,\n        \"name\": \"premium\",\n        \"expiredDate\": \"2024-06-30T11:02:44.6764735+07:00\",\n        \"paymentMethod_id\": 1\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "View",
+			"item": [
+				{
+					"name": "Get Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{customer-host}}/view",
+							"host": [
+								"{{customer-host}}"
+							],
+							"path": [
+								"view"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{customer-host}}/view",
+									"host": [
+										"{{customer-host}}"
+									],
+									"path": [
+										"view"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 May 2024 04:04:11 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "404"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"source\": \"view\",\n        \"status\": \"fetched\",\n        \"structure\": \"single-data\"\n    },\n    \"data\": {\n        \"id\": 16,\n        \"createdAt\": \"0001-01-01T00:00:00Z\",\n        \"updatedAt\": \"0001-01-01T00:00:00Z\",\n        \"deletedAt\": null,\n        \"user_id\": 0,\n        \"name\": \"Dika Agus\",\n        \"birthDate\": null,\n        \"gender\": 1,\n        \"address\": \"\",\n        \"buildingNumber\": null,\n        \"regency_id\": 0,\n        \"postalCode\": null,\n        \"phoneNumber\": null,\n        \"whatsappNumber\": null,\n        \"profileImg\": null,\n        \"lastGenerateView\": \"0001-01-01T00:00:00Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "View Result",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"target_profile_id\": 16,\r\n    \"result\": \"like\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{customer-host}}/view-result",
+							"host": [
+								"{{customer-host}}"
+							],
+							"path": [
+								"view-result"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"target_profile_id\": 12,\r\n    \"result\": \"like\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{customer-host}}/view-result",
+									"host": [
+										"{{customer-host}}"
+									],
+									"path": [
+										"view-result"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 May 2024 04:04:37 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"data-state-mismatch\",\n    \"message\": \"\\\"%v\\\" is not in \\\"%v\\\" state\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"target_profile_id\": 16,\r\n    \"result\": \"like\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{customer-host}}/view-result",
+									"host": [
+										"{{customer-host}}"
+									],
+									"path": [
+										"view-result"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 May 2024 04:05:09 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "925"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"source\": \"view\",\n        \"status\": \"created\",\n        \"structure\": \"single-data\"\n    },\n    \"data\": {\n        \"id\": 21,\n        \"createdAt\": \"2024-05-30T11:05:09.396+07:00\",\n        \"updatedAt\": \"2024-05-30T11:05:09.396+07:00\",\n        \"deletedAt\": null,\n        \"viewer_profile_id\": 2,\n        \"Viewer_Profile\": {\n            \"id\": 0,\n            \"createdAt\": \"0001-01-01T00:00:00Z\",\n            \"updatedAt\": \"0001-01-01T00:00:00Z\",\n            \"deletedAt\": null,\n            \"user_id\": 0,\n            \"name\": \"\",\n            \"birthDate\": null,\n            \"gender\": null,\n            \"address\": \"\",\n            \"buildingNumber\": null,\n            \"regency_id\": 0,\n            \"postalCode\": null,\n            \"phoneNumber\": null,\n            \"whatsappNumber\": null,\n            \"profileImg\": null,\n            \"lastGenerateView\": \"0001-01-01T00:00:00Z\"\n        },\n        \"target_profile_id\": 16,\n        \"Target_Profile\": {\n            \"id\": 0,\n            \"createdAt\": \"0001-01-01T00:00:00Z\",\n            \"updatedAt\": \"0001-01-01T00:00:00Z\",\n            \"deletedAt\": null,\n            \"user_id\": 0,\n            \"name\": \"\",\n            \"birthDate\": null,\n            \"gender\": null,\n            \"address\": \"\",\n            \"buildingNumber\": null,\n            \"regency_id\": 0,\n            \"postalCode\": null,\n            \"phoneNumber\": null,\n            \"whatsappNumber\": null,\n            \"profileImg\": null,\n            \"lastGenerateView\": \"0001-01-01T00:00:00Z\"\n        },\n        \"result\": \"like\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{customer-host}}",
+					"host": [
+						"{{customer-host}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTcxMjY5NDcsInByb2ZpbGVfaWQiOjIsInVzZXJfZW1haWwiOiJzYW50b3NvXzAyQGdtYWlsLmNvbSIsInVzZXJfaWQiOjMsInVzZXJfbmFtZSI6InNhbnRvc28wMiIsInV1aWQiOiJmOGVjYzMxMi0wYWE5LTQ3YjItYTE1MS0zYTVlZGRiOTJiZjcifQ.7Pp6SPdgRUDrRCv35NSehdGXvKPGKV8ULgLwegKFR2c",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

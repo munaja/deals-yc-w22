@@ -1,0 +1,34 @@
+fullName: Super Dating App
+codeName: super-dating-app
+version: 0.0.1
+env: development
+lang: en
+
+httpConf:
+  host: 127.0.0.1
+  port: 8100
+
+langConf:
+  active: en
+  path: ../../resources/language
+  fileName: data.json
+
+dbConf:
+  dsn: root:pass1234@tcp(127.0.0.1:3306)/deals-yc-w22?charset=utf8mb4&parseTime=True&loc=Local
+  maxOpenConns: 5
+  maxIdleConns: 5
+  maxIdleTime: 100
+  dialect: mysql
+
+msConf:
+  dsn: 127.0.0.1:6379
+
+authConf:
+  atSecretKey: OLDWORLDORDER
+  rtSecretKey: BLACKSEAOFIGNORANCE
+
+resourceConf:
+  pubImgUrlPath: /resource/pub-img
+  privImgUrlPath: /resource/priv-img
+  pubImgDir: ../../resource/pub-img
+  privImgDir: ../../resource/priv-img

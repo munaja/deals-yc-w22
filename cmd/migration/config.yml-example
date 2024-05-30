@@ -1,0 +1,4 @@
+name: Migrator
+version: 0.1
+
+dsn: root:pass1234@tcp(127.0.0.1:3306)/deals-yc-w22?charset=utf8mb4&parseTime=True&loc=Local
