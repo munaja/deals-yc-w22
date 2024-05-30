@@ -10,7 +10,7 @@ httpConf:
 
 langConf:
   active: en
-  path: ../../resources/language
+  path: ../../assets/language
   fileName: data.json
 
 dbConf:

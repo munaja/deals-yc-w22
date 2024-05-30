@@ -1,13 +1,19 @@
 # Dating App
 Dating Application
 
-## Business Scope
-There are two entity that is being involved: `customer` and the `platform`. For the `platform` itself can be categorized into 2 more: `operator`, `system`.
-
-Note that for exam purpose the `platform` part is ignored and the focus is more into the `customer`
-
-
 ## Technical Design
+- Database, used to store primary data with 4 main tables:
+  - user
+  - usertoken
+  - profile
+  - viewresult
+  - subscription
+
+- Memory Storage, used for anything that has expiration time. There are 2 flows that utilize memory-storage:
+  - viewlist, will be expired at the end of the day
+  - subscripotion, will be expired based on user input (in months)
+
+## Technical Infrastructure
 Used stacks:
 - Programming Language: Go version 1.22.1 or above (https://go.dev/)
 - Database: MariaDB version 10.10 (https://mariadb.org/) or MySQL with the evquivalent version (https://www.mysql.com)
@@ -18,6 +24,9 @@ Based on the needs and according to the `go-project-standard-layout`, there are 
 - `internal`: consists any logic related to the business flow, which follows `Clean Architecture` (`CA`) approach
 - `pkg`: consists any logic that are not related to the business flow
 - `cmd`: consists any executabble parts that run the services (acctually only one service for exam purpose)
+- `docs`: any documentation
+- `test`: test script or request documentation
+- `assets`: any assets used by the application
 
 ### More About `internal` Directory
 To make it more organized, the files are grouped into 3 main parts or layers (according to the `CA` as mentioned previously) as follows:
@@ -31,7 +40,6 @@ Note:
 
 ### More About `pkg` Directory
 All of the codes within the directory are taken from several projects that are previously used by the author (the exam participant).
-
 
 
 ## Running The Project
@@ -57,9 +65,9 @@ All of the codes within the directory are taken from several projects that are p
 - Run command `go build .` to create the executabble file, then execute it.
 
 ### API Documentation
-Testing can be done using `postman` directly please import the collection which is available in the project repository under `request-doc` directory. 
+Testing can be done using `postman` directly please import the collection which is available in the project repository under `request-doc` directory. The file name is `Deals YC W22.postman_collection`, imported collection name should be `Deals YC W22`.
 
-The file name is `Deals YC W22.postman_collection`, imported collection name should be `Deals YC W22`.
+There is environment variable named `{{customer-host}}` which should be filled with host server created by the app, for example: `localhost:8100`
 
 Some special flow of the request:
 - Account registration needs an activation, which will be included in the result if the `env` in the `.env` is set to `development`, for example result will have a note similar to this  `For Dev Only: use this path '/account/confirm-by-email?email=santoso_03@gmail.com&token=fb8bbf42-c36d-4be2-a36a-3af4a471bf56' to activate account`. There for after registration please access the given path `/account/confirm-by-email?email=santoso_03@gmail.com&token=fb8bbf42-c36d-4be2-a36a-3af4a471bf56` from postman which available under `Account` directory request `Request Confirmation By Email`
