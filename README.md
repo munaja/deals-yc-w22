@@ -33,6 +33,7 @@ Note:
 All of the codes within the directory are taken from several projects that are previously used by the author (the exam participant).
 
 
+
 ## Running The Project
 ### Preparation
 - Make sure the main stack (`Go`, `MariaDB`, `Redis`) with the specified version above are already installed.
@@ -56,7 +57,9 @@ All of the codes within the directory are taken from several projects that are p
 - Run command `go build .` to create the executabble file, then execute it.
 
 ### API Documentation
-Testing can be done using `postman` directly please import the collection which is available in the project repository under `request-doc` directory. The collection name is `Deals YC W22`.
+Testing can be done using `postman` directly please import the collection which is available in the project repository under `request-doc` directory. 
+
+The file name is `Deals YC W22.postman_collection`, imported collection name should be `Deals YC W22`.
 
 Some special flow of the request:
 - Account registration needs an activation, which will be included in the result if the `env` in the `.env` is set to `development`, for example result will have a note similar to this  `For Dev Only: use this path '/account/confirm-by-email?email=santoso_03@gmail.com&token=fb8bbf42-c36d-4be2-a36a-3af4a471bf56' to activate account`. There for after registration please access the given path `/account/confirm-by-email?email=santoso_03@gmail.com&token=fb8bbf42-c36d-4be2-a36a-3af4a471bf56` from postman which available under `Account` directory request `Request Confirmation By Email`
